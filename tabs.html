@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            color: white;
+
+            padding: 0;
+        }
+        body{
+            background: rgb(36, 36, 68);
+        }
+        h1{
+            text-align: center;
+            padding: 60px;
+        }
+        .tabs{
+            width: 500px;
+            margin: 0 auto;
+            z-index:1;
+        }
+        nav{
+            margin-top: 50px;
+            align-items: center;
+        }
+        nav a{
+            border: 1px solid rgb(0, 0, 0,.2);
+            background: rgb(0, 0, 0,.2);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 10px;
+            transition: .85s;
+        }
+        .active{
+            border: 1px solid white;
+            background: rgb(255, 255, 255,.2);
+        }
+        .tab-content{
+           margin-top: 80px;
+           position: absolute;
+           background: white;
+           color: black;
+           padding: 20px 20px;
+           line-height: 1.5em;
+           font-family: sans-serif;
+           box-shadow: 0px 0px 10px 0px rgb(255, 255, 255,.2);
+        }
+        .tab-content h2{
+            color:darkorchid;
+            line-height: 2em;
+        }
+#two, #three{
+    display: none;
+}
+.displays{
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <h1>TABS</h1>
+    <div class="tabs">
+        <nav class="tab-list">
+            <a class="tab tab1 active">One</a>
+            <a class="tab tab2">two</a>
+            <a class="tab tab3">Three</a>
+        </nav>
+        <div class="box">
+        <div id="one" class="tab-content">
+            <h2>Tab One-1</h2>
+            1-Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repellat<br>
+            similique rem, reprehenderit nostrum asperiores aliquid laudantium sequi.<br>
+             Ipsum aliquam similique neque voluptate deleniti error reprehenderit<br>
+              eos nam cumque corporis?
+        </div>
+        <div id="two" class="tab-content">
+            <h2>Tab Two-2</h2>
+            2-Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repellat<br>
+            similique rem, reprehenderit nostrum asperiores aliquid laudantium sequi.<br>
+             Ipsum aliquam similique neque voluptate deleniti error reprehenderit<br>
+              eos nam cumque corporis?
+        </div>
+        <div id="three" class="tab-content">
+            <h2>Tab Three-3</h2>
+            3-Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repellat<br>
+            similique rem, reprehenderit nostrum asperiores aliquid laudantium sequi.<br>
+             Ipsum aliquam similique neque voluptate deleniti error reprehenderit<br>
+              eos nam cumque corporis?
+        </div>
+    </div>
+    </div>
+   
+ <script>
+
+        $(document).ready(function(){
+  $(".tab1").click(function(){
+    $('#one').css("display","block");
+    $('#one').siblings().css("display","none")
+    $('.tab1').addClass('active')
+    $(".tab1").siblings().removeClass('active')
+  });
+  $(".tab2").click(function(){
+    $('#two').css("display","block");
+    $('#two').siblings().css("display","none")
+    $('.tab2').addClass('active')
+    $(".tab2").siblings().removeClass('active')
+  });
+  $(".tab3").click(function(){
+    $('#three').css("display","block");
+    $('.tab3').addClass('active')
+    $(".tab3").siblings().removeClass('active')
+  });
+});
+
+
+
+        
+ </script>   
+</body>
+</html>
